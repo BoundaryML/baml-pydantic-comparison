@@ -7,13 +7,33 @@
 # pylint: disable=unused-import,line-too-long
 # fmt: off
 
+from .classes.cls_address import PartialAddress
+from .classes.cls_complexrestorationproject import PartialComplexRestorationProject
 from .classes.cls_education import PartialEducation
+from .classes.cls_item import PartialItem
+from .classes.cls_manuscriptcondition import PartialManuscriptCondition
+from .classes.cls_manuscriptcontext import PartialManuscriptContext
+from .classes.cls_orderinfo import PartialOrderInfo
+from .classes.cls_orderinfo2 import PartialOrderInfo2
+from .classes.cls_orderinfo3 import PartialOrderInfo3
+from .classes.cls_piidata import PartialPIIData
+from .classes.cls_restoration import PartialRestoration
 from .classes.cls_resume import PartialResume
 
 
 
 
 __all__ = [
+    'PartialAddress',
+    'PartialComplexRestorationProject',
     'PartialEducation',
+    'PartialItem',
+    'PartialManuscriptCondition',
+    'PartialManuscriptContext',
+    'PartialOrderInfo',
+    'PartialOrderInfo2',
+    'PartialOrderInfo3',
+    'PartialPIIData',
+    'PartialRestoration',
     'PartialResume'
 ]

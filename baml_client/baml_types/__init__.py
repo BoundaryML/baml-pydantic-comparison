@@ -7,23 +7,71 @@
 # pylint: disable=unused-import,line-too-long
 # fmt: off
 
+from ..__do_not_import.functions.fx_analyzerestorationproject import IAnalyzeRestorationProject, IAnalyzeRestorationProjectOutput, IAnalyzeRestorationProjectStream
 from ..__do_not_import.functions.fx_classifymessage import IClassifyMessage, IClassifyMessageOutput, IClassifyMessageStream
+from ..__do_not_import.functions.fx_extractorderinfo import IExtractOrderInfo, IExtractOrderInfoOutput, IExtractOrderInfoStream
+from ..__do_not_import.functions.fx_extractorderinfo2 import IExtractOrderInfo2, IExtractOrderInfo2Output, IExtractOrderInfo2Stream
+from ..__do_not_import.functions.fx_extractorderinfo3 import IExtractOrderInfo3, IExtractOrderInfo3Output, IExtractOrderInfo3Stream
+from ..__do_not_import.functions.fx_extractpii import IExtractPII, IExtractPIIOutput, IExtractPIIStream
 from ..__do_not_import.functions.fx_extractresume import IExtractResume, IExtractResumeOutput, IExtractResumeStream
+from ..__do_not_import.types.classes.cls_address import Address
+from ..__do_not_import.types.classes.cls_complexrestorationproject import ComplexRestorationProject
 from ..__do_not_import.types.classes.cls_education import Education
+from ..__do_not_import.types.classes.cls_item import Item
+from ..__do_not_import.types.classes.cls_manuscriptcondition import ManuscriptCondition
+from ..__do_not_import.types.classes.cls_manuscriptcontext import ManuscriptContext
+from ..__do_not_import.types.classes.cls_orderinfo import OrderInfo
+from ..__do_not_import.types.classes.cls_orderinfo2 import OrderInfo2
+from ..__do_not_import.types.classes.cls_orderinfo3 import OrderInfo3
+from ..__do_not_import.types.classes.cls_piidata import PIIData
+from ..__do_not_import.types.classes.cls_restoration import Restoration
 from ..__do_not_import.types.classes.cls_resume import Resume
 from ..__do_not_import.types.enums.enm_category import Category
+from ..__do_not_import.types.enums.enm_manuscriptstate import ManuscriptState
+from ..__do_not_import.types.enums.enm_materialorigin import MaterialOrigin
+from ..__do_not_import.types.enums.enm_states import States
+from ..__do_not_import.types.enums.enm_timeperiod import TimePeriod
 
 
 
 
 __all__ = [
+    'Address',
     'Category',
+    'ComplexRestorationProject',
     'Education',
+    'IAnalyzeRestorationProject',
+    'IAnalyzeRestorationProjectOutput',
+    'IAnalyzeRestorationProjectStream',
     'IClassifyMessage',
     'IClassifyMessageOutput',
     'IClassifyMessageStream',
+    'IExtractOrderInfo',
+    'IExtractOrderInfo2',
+    'IExtractOrderInfo2Output',
+    'IExtractOrderInfo2Stream',
+    'IExtractOrderInfo3',
+    'IExtractOrderInfo3Output',
+    'IExtractOrderInfo3Stream',
+    'IExtractOrderInfoOutput',
+    'IExtractOrderInfoStream',
+    'IExtractPII',
+    'IExtractPIIOutput',
+    'IExtractPIIStream',
     'IExtractResume',
     'IExtractResumeOutput',
     'IExtractResumeStream',
-    'Resume'
+    'Item',
+    'ManuscriptCondition',
+    'ManuscriptContext',
+    'ManuscriptState',
+    'MaterialOrigin',
+    'OrderInfo',
+    'OrderInfo2',
+    'OrderInfo3',
+    'PIIData',
+    'Restoration',
+    'Resume',
+    'States',
+    'TimePeriod'
 ]

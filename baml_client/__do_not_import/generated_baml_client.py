@@ -7,10 +7,15 @@
 # pylint: disable=unused-import,line-too-long
 # fmt: off
 
-from .clients.client_gpt3 import GPT3
+from .clients.client_gpt35 import GPT35
 from .clients.client_gpt4 import GPT4
 from .clients.client_gpt4turbo import GPT4Turbo
+from .functions.fx_analyzerestorationproject import BAMLAnalyzeRestorationProject
 from .functions.fx_classifymessage import BAMLClassifyMessage
+from .functions.fx_extractorderinfo import BAMLExtractOrderInfo
+from .functions.fx_extractorderinfo2 import BAMLExtractOrderInfo2
+from .functions.fx_extractorderinfo3 import BAMLExtractOrderInfo3
+from .functions.fx_extractpii import BAMLExtractPII
 from .functions.fx_extractresume import BAMLExtractResume
 from baml_core.otel import add_message_transformer_hook, flush_trace_logs
 from baml_core.provider_manager import LLMManager
@@ -20,9 +25,14 @@ from typing import Callable, List, Optional
 
 
 class BAMLClient:
+    AnalyzeRestorationProject = BAMLAnalyzeRestorationProject
     ClassifyMessage = BAMLClassifyMessage
+    ExtractOrderInfo = BAMLExtractOrderInfo
+    ExtractOrderInfo2 = BAMLExtractOrderInfo2
+    ExtractOrderInfo3 = BAMLExtractOrderInfo3
+    ExtractPII = BAMLExtractPII
     ExtractResume = BAMLExtractResume
-    GPT3 = GPT3
+    GPT35 = GPT35
     GPT4 = GPT4
     GPT4Turbo = GPT4Turbo
 

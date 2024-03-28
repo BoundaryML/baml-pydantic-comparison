@@ -11,8 +11,8 @@ from baml_core.provider_manager import LLMManager
 from os import environ
 
 
-GPT3 = LLMManager.add_llm(
-    name="GPT3",
+GPT35 = LLMManager.add_llm(
+    name="GPT35",
     provider="baml-openai-chat",
     retry_policy=None,
     redactions=["api_key"],

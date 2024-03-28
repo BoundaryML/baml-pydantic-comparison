@@ -4,10 +4,19 @@ version = "0.1.0"
 description = ""
 authors = ["None"]
 readme = "README.md"
+packages = [
+    { include = "app", from = "." },
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 baml = "^0.17.1"
+openai = "^1.14.3"
+instructor = "^0.6.7"
+python-dotenv = "^1.0.1"
+pytest-asyncio = "0.21.1"
+datasets = "^2.18.0"
+ipykernel = "^6.29.4"
 
 
 [build-system]

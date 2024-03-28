@@ -7,13 +7,33 @@
 # pylint: disable=unused-import,line-too-long
 # fmt: off
 
+from ..__do_not_import.types.partial.classes.cls_address import PartialAddress
+from ..__do_not_import.types.partial.classes.cls_complexrestorationproject import PartialComplexRestorationProject
 from ..__do_not_import.types.partial.classes.cls_education import PartialEducation
+from ..__do_not_import.types.partial.classes.cls_item import PartialItem
+from ..__do_not_import.types.partial.classes.cls_manuscriptcondition import PartialManuscriptCondition
+from ..__do_not_import.types.partial.classes.cls_manuscriptcontext import PartialManuscriptContext
+from ..__do_not_import.types.partial.classes.cls_orderinfo import PartialOrderInfo
+from ..__do_not_import.types.partial.classes.cls_orderinfo2 import PartialOrderInfo2
+from ..__do_not_import.types.partial.classes.cls_orderinfo3 import PartialOrderInfo3
+from ..__do_not_import.types.partial.classes.cls_piidata import PartialPIIData
+from ..__do_not_import.types.partial.classes.cls_restoration import PartialRestoration
 from ..__do_not_import.types.partial.classes.cls_resume import PartialResume
 
 
 
 
 __all__ = [
+    'PartialAddress',
+    'PartialComplexRestorationProject',
     'PartialEducation',
+    'PartialItem',
+    'PartialManuscriptCondition',
+    'PartialManuscriptContext',
+    'PartialOrderInfo',
+    'PartialOrderInfo2',
+    'PartialOrderInfo3',
+    'PartialPIIData',
+    'PartialRestoration',
     'PartialResume'
 ]
