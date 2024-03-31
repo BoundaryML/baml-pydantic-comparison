@@ -25,10 +25,8 @@ A series of writings from an era marked by profound philosophical questioning, b
 ]
 
 
-# Scrub the PII Data from the document
 @pytest.mark.asyncio
 def test_instructor_extract_entities():
-    # Define the PII Scrubbing Model
   output: ComplexRestorationProject = client.chat.completions.create(
       model="gpt-4",
       response_model=ComplexRestorationProject,

@@ -10,6 +10,8 @@
 from .clients.client_gpt35 import GPT35
 from .clients.client_gpt4 import GPT4
 from .clients.client_gpt4turbo import GPT4Turbo
+from .clients.client_llama2 import Llama2
+from .clients.client_mistral import Mistral
 from .functions.fx_analyzerestorationproject import BAMLAnalyzeRestorationProject
 from .functions.fx_classifymessage import BAMLClassifyMessage
 from .functions.fx_extractorderinfo import BAMLExtractOrderInfo
@@ -35,6 +37,8 @@ class BAMLClient:
     GPT35 = GPT35
     GPT4 = GPT4
     GPT4Turbo = GPT4Turbo
+    Llama2 = Llama2
+    Mistral = Mistral
 
     def __init__(self):
         LLMManager.validate()

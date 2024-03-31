@@ -15,9 +15,9 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 
-@register_deserializer({ "order_id": "id","total_price": "price","purchased_items": "items", })
+@register_deserializer({ "order_id": "id","total_price": "price","purchased_items": "items","address_in_text": "shipping_address", })
 class OrderInfo3(BaseModel):
     id: str
     price: Optional[int] = None
     items: List[Item]
-    shipping_address: Optional[Address] = None
+    shipping_address: Address

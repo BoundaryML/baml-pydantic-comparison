@@ -57,7 +57,7 @@ class IBAMLExtractOrderInfo3(BaseBAMLFunction[OrderInfo3, PartialOrderInfo3]):
         super().__init__(
             "ExtractOrderInfo3",
             IExtractOrderInfo3,
-            ["v1"],
+            ["llama2", "v1"],
         )
 
     async def __call__(self, *args, **kwargs) -> OrderInfo3:

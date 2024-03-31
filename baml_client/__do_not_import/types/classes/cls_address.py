@@ -15,7 +15,7 @@ from typing import Optional
 
 @register_deserializer({  })
 class Address(BaseModel):
-    street: Optional[str] = None
+    street: str
     city: Optional[str] = None
-    state: Optional[States] = None
+    state: States
     zip_code: Optional[str] = None

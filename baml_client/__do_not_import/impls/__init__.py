@@ -13,6 +13,7 @@ from .fx_analyzerestorationproject_impl_v1 import v1 as unused_fx_analyzerestora
 from .fx_classifymessage_impl_level1 import level1 as unused_fx_classifymessage_impl_level1
 from .fx_extractorderinfo_impl_v1 import v1 as unused_fx_extractorderinfo_impl_v1
 from .fx_extractorderinfo2_impl_v2 import v2 as unused_fx_extractorderinfo2_impl_v2
+from .fx_extractorderinfo3_impl_llama2 import llama2 as unused_fx_extractorderinfo3_impl_llama2
 from .fx_extractorderinfo3_impl_v1 import v1 as unused_fx_extractorderinfo3_impl_v1
 from .fx_extractpii_impl_v1 import v1 as unused_fx_extractpii_impl_v1
 from .fx_extractresume_impl_version1 import version1 as unused_fx_extractresume_impl_version1

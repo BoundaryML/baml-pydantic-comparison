@@ -6,6 +6,7 @@ import os
 import asyncio
 from baml_client.baml_types import OrderInfo2
 from typing import List, Optional
+import instructor
 
 # set debug logging
 import logging
@@ -13,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 load_dotenv()
 
-# Define your desired output structure
+# Desired output structure
 class OrderInfo(BaseModel):
     id: str
     price: int
@@ -22,6 +23,18 @@ openai_api_key = os.environ.get("OPENAI_API_KEY")
 
 # Patch the OpenAI client
 client: OpenAI = patch(OpenAI(api_key=openai_api_key), mode=Mode.MD_JSON)
+
+ollama_client = client = instructor.patch(
+    OpenAI(
+        base_url="http://localhost:11434",
+        api_key="ollama",  # required, but unused
+    ),
+    mode=instructor.Mode.JSON,
+)
+
+
+def extract_order_info_mistral(arg: str):
+    resp = ollama_client
 
 def extract_order_info_instructor(arg: str):
     resp = client.chat.completions.create(
@@ -33,8 +46,6 @@ def extract_order_info_instructor(arg: str):
     )
 
     print(resp._raw_response)
-    print(resp.id)
-    print(resp.price)
 
 
 def extract_order_info_instructor2(arg: str):
@@ -75,16 +86,19 @@ class OrderInfo3(BaseModel):
 
 
 def extract_order_info_instructor3(arg: str):
-    resp: OrderInfo3 = client.chat.completions.create(
-        model="gpt-4",
-        response_model=OrderInfo3, 
-        messages=[
-            {"role": "user", "content": arg},
-        ]
-    )
+    try:
+      resp: OrderInfo3 = client.chat.completions.create(
+          model="gpt-4",
+          response_model=OrderInfo3, 
+          messages=[
+              {"role": "user", "content": arg},
+          ]
+      )
 
-    print(resp._raw_response) # instructor adds the _raw_resopnse here so the type is not accurate.
-    print(resp.model_dump_json(indent=2))
+      print(resp._raw_response) # instructor adds the _raw_resopnse here so the type is not accurate.
+      print(resp.model_dump_json(indent=2))
+    except Exception as e:
+      print(e)
 
 
 from baml_client import baml as b

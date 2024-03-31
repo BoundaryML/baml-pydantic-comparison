@@ -7,7 +7,7 @@
 # pylint: disable=unused-import,line-too-long
 # fmt: off
 
-from ..clients.client_gpt4 import GPT4
+from ..clients.client_llama2 import Llama2
 from ..functions.fx_extractorderinfo3 import BAMLExtractOrderInfo3
 from ..types.classes.cls_address import Address
 from ..types.classes.cls_item import Item
@@ -22,8 +22,8 @@ from baml_lib._impl.deserializer import Deserializer
 
 
 import typing
-# Impl: v1
-# Client: GPT4
+# Impl: llama2
+# Client: Llama2
 # An implementation of ExtractOrderInfo3.
 
 __prompt_template = """\
@@ -78,17 +78,17 @@ __partial_deserializer = Deserializer[PartialOrderInfo3](PartialOrderInfo3)  # t
 
 
 
-async def v1(arg: str, /) -> OrderInfo3:
-    response = await GPT4.run_prompt_template(template=__prompt_template, replacers=__input_replacers, params=dict(arg=arg))
+async def llama2(arg: str, /) -> OrderInfo3:
+    response = await Llama2.run_prompt_template(template=__prompt_template, replacers=__input_replacers, params=dict(arg=arg))
     deserialized = __deserializer.from_string(response.generated)
     return deserialized
 
 
-def v1_stream(arg: str, /) -> AsyncStream[OrderInfo3, PartialOrderInfo3]:
+def llama2_stream(arg: str, /) -> AsyncStream[OrderInfo3, PartialOrderInfo3]:
     def run_prompt() -> typing.AsyncIterator[LLMResponse]:
-        raw_stream = GPT4.run_prompt_template_stream(template=__prompt_template, replacers=__input_replacers, params=dict(arg=arg))
+        raw_stream = Llama2.run_prompt_template_stream(template=__prompt_template, replacers=__input_replacers, params=dict(arg=arg))
         return raw_stream
     stream = AsyncStream(stream_cb=run_prompt, partial_deserializer=__partial_deserializer, final_deserializer=__deserializer)
     return stream
 
-BAMLExtractOrderInfo3.register_impl("v1")(v1, v1_stream)
+BAMLExtractOrderInfo3.register_impl("llama2")(llama2, llama2_stream)

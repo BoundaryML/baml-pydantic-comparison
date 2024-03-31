@@ -21,3 +21,17 @@ client<llm> GPT35 {
     api_key env.OPENAI_API_KEY
   }
 }
+
+client<llm> Mistral {
+  provider baml-ollama-chat
+  options {
+    model Mistral
+  }
+}
+
+client<llm> Llama2 {
+  provider baml-ollama-chat
+  options {
+    model llama2:chat
+  }
+}

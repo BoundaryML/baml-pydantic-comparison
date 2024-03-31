@@ -7,14 +7,15 @@
 # pylint: disable=unused-import,line-too-long
 # fmt: off
 
-from baml_lib._impl.deserializer import register_deserializer
-from enum import Enum
+from baml_core.provider_manager import LLMManager
 
 
-@register_deserializer({
-
-})
-class States(str, Enum):
-    WA = "WA"
-    OR = "OR"
-    CA = "CA"
+Mistral = LLMManager.add_llm(
+    name="Mistral",
+    provider="baml-ollama-chat",
+    retry_policy=None,
+    redactions=[],
+    options=dict(
+        model="Mistral",
+    ),
+)

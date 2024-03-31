@@ -15,7 +15,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 
-@register_deserializer({ "order_id": "id","total_price": "price","purchased_items": "items", })
+@register_deserializer({ "order_id": "id","total_price": "price","purchased_items": "items","address_in_text": "shipping_address", })
 class PartialOrderInfo3(BaseModel):
     id: Optional[str] = None
     price: Optional[int] = None
